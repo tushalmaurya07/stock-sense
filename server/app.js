@@ -25,6 +25,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({ origin: CLIENT_URL || '*', credentials: true }));
+app.options('*', cors({ origin: CLIENT_URL || '*', credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === 'development') {
